@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif"
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content ="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="app">
+  <h1> Tic Tac Toe </h1>
+  <div v-if="userMarker===''">
+    <label>
+      <button v-on:click="userMarker='x',oppMarker='o'">x</button>
+      <p> or </p>
+      <button v-on:click="userMarker='o',oppMarker='x'">o</button>
+    </label>
+  </div>
+  <div id=gameBoard v-else>
+    <div id="message">
+      <h1>
+    {{message}}
+    </h1>
+    </div>
+    <button v-if="gameEnded" v-on:click="startNewGame()"> Restart Game</button>
+    <div id="container">
+      <field v-for="(item,index) in board" v-bind:marker="item" v-on:add-marker="markField(index)"></field>
+    </div>
+  </div>
+  <p>made by <a href="https://codepen.io/roelkers" target="_blank">roelkers</p>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+<script src="app.js"></script>
