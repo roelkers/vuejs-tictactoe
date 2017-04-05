@@ -8,10 +8,6 @@ p{
   align-items: center;
 }
 
-@medium screen and (min-width=512px){
-
-}
-
 button{
   border-radius: 1px;
   font-family: 'Orbitron', sans-serif;
